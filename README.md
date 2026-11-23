@@ -8,8 +8,7 @@ Photos and text stay in the browser. Nothing is uploaded to a server.
 
 ## What you get
 
-- Solo mode: upload one photo, type name / designation, download PNG
-- Optional Excel / ZIP batch (off by default)
+- Upload one photo, type name / designation / location, download PNG (no Excel / team batch mode)
 - One Doctor layout (no layout picker)
 - Photo fills a perfectly round hole exactly inside the thin gold ring; the ring stays on top
 - The printed pink "Add photo" disc shows until a photo is added
@@ -134,26 +133,12 @@ and the hole both have soft edges. If they match exactly, every edge pixel is
 partly transparent and a pale hairline shows. The white band is drawn on top and
 hides the overrun.
 
-### Branding and solo vs Excel
+### Branding
 
 | Knob | Where | What to change |
 |---|---|---|
 | Page title / header | `<title>`, header HTML | Campaign name |
 | Theme colours | `:root` `--accent`, `--coral`, `--blush` | Brand |
-| Location line | `PRESETS.*.loc` | Leave it out when the artwork has none |
-| Excel / ZIP | `EXCEL_ENABLE` | `true` for team batch |
-| Default layout | `store.get('tpl', …)` in `init` | `'doctor'` or `'counsellor'` |
-
-### Excel batch (optional)
-
-Set `EXCEL_ENABLE = true`. The sheet needs:
-
-- **Name** (or Employee Name / Doctor Name)
-- **Employee ID** and/or **Document Name** (photo file stem)
-
-Optional: designation, location / city / centre.
-
-Photos match when the file name equals Document Name or contains the Employee ID.
 
 ## How drawing works
 
